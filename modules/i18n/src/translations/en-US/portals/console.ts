@@ -679,6 +679,16 @@ export const console: ConsoleNS = {
                                     required: "Email OTP length is a required field."
                                 }
                             },
+                            allowedResendAttemptCount: {
+                                hint: "The number of allowed OTP resend attempts.",
+                                label: "Allowed OTP resend attempt count",
+                                placeholder: "Enter allowed resend attempt count.",
+                                validations: {
+                                    required: "Allowed OTP resend attempt count is a required field.",
+                                    invalid: "Allowed OTP resend attempt count should be an integer.",
+                                    range: "Allowed OTP resend attempt count should be between 0 & 100."
+                                }
+                            },
                             useAlphanumericChars: {
                                 hint: "Please check this checkbox to enable alphanumeric characters. Otherwise numeric characters will be used.",
                                 label: "Use alphanumeric characters for OTP",
@@ -698,6 +708,16 @@ export const console: ConsoleNS = {
                                     invalid: "SMS OTP expiry time should be an integer.",
                                     range: "SMS OTP expiry time should be between 1 minutes & 1440 minutes (1 day).",
                                     required: "SMS OTP expiry time is a required field."
+                                }
+                            },
+                            allowedResendAttemptCount: {
+                                hint: "The number of allowed OTP resend attempts.",
+                                label: "Allowed OTP resend attempt count",
+                                placeholder: "Enter allowed resend attempt count.",
+                                validations: {
+                                    required: "Allowed OTP resend attempt count is a required field.",
+                                    invalid: "Allowed OTP resend attempt count should be an integer.",
+                                    range: "Allowed OTP resend attempt count should be between 0 & 100."
                                 }
                             },
                             tokenLength: {
@@ -723,16 +743,6 @@ export const console: ConsoleNS = {
                                 label: "Use only numeric characters for OTP",
                                 validations: {
                                     required: "Use only numeric characters for OTP token is a required field."
-                                }
-                            },
-                            allowedResendAttemptCount: {
-                                hint: "The number of allowed OTP resend attempts.",
-                                label: "Allowed OTP resend attempt count",
-                                placeholder: "Enter allowed resend attempt count.",
-                                validations: {
-                                    required: "Allowed OTP resend attempt count is a required field.",
-                                    invalid: "Allowed OTP resend attempt count should be an integer.",
-                                    range: "Allowed OTP resend attempt count should be between 0 & 100."
                                 }
                             }
                         },
