@@ -679,6 +679,16 @@ export const console: ConsoleNS = {
                                     required: "Email OTP length is a required field."
                                 }
                             },
+                            allowedResendAttemptCount: {
+                                hint: "The number of allowed OTP resend attempts.",
+                                label: "Allowed OTP resend attempt count",
+                                placeholder: "Enter allowed resend attempt count.",
+                                validations: {
+                                    required: "Allowed OTP resend attempt count is a required field.",
+                                    invalid: "Allowed OTP resend attempt count should be an integer.",
+                                    range: "Allowed OTP resend attempt count should be between 0 & 100."
+                                }
+                            },
                             useAlphanumericChars: {
                                 hint: "Please check this checkbox to enable alphanumeric characters. Otherwise numeric characters will be used.",
                                 label: "Use alphanumeric characters for OTP",
@@ -698,6 +708,16 @@ export const console: ConsoleNS = {
                                     invalid: "SMS OTP expiry time should be an integer.",
                                     range: "SMS OTP expiry time should be between 1 minutes & 1440 minutes (1 day).",
                                     required: "SMS OTP expiry time is a required field."
+                                }
+                            },
+                            allowedResendAttemptCount: {
+                                hint: "The number of allowed OTP resend attempts.",
+                                label: "Allowed OTP resend attempt count",
+                                placeholder: "Enter allowed resend attempt count.",
+                                validations: {
+                                    required: "Allowed OTP resend attempt count is a required field.",
+                                    invalid: "Allowed OTP resend attempt count should be an integer.",
+                                    range: "Allowed OTP resend attempt count should be between 0 & 100."
                                 }
                             },
                             tokenLength: {
@@ -723,16 +743,6 @@ export const console: ConsoleNS = {
                                 label: "Use only numeric characters for OTP",
                                 validations: {
                                     required: "Use only numeric characters for OTP token is a required field."
-                                }
-                            },
-                            allowedResendAttemptCount: {
-                                hint: "The number of allowed OTP resend attempts.",
-                                label: "Allowed OTP resend attempt count",
-                                placeholder: "Enter allowed resend attempt count.",
-                                validations: {
-                                    required: "Allowed OTP resend attempt count is a required field.",
-                                    invalid: "Allowed OTP resend attempt count should be an integer.",
-                                    range: "Allowed OTP resend attempt count should be between 0 & 100."
                                 }
                             }
                         },
@@ -8391,6 +8401,16 @@ export const console: ConsoleNS = {
                     }
                 },
                 notifications: {
+                    addApprovalWorkflow: {
+                        genericError: {
+                            description: "There was an error while creating the approval workflow.",
+                            message: "Something went wrong!"
+                        },
+                        success: {
+                            description: "The approval workflow has been added successfully!",
+                            message: "approval workflow added successfully!"
+                        }
+                    },
                     apiLimitReachedError: {
                         error: {
                             description: "You have reached the maximum number of approval workflows allowed.",
@@ -8401,6 +8421,22 @@ export const console: ConsoleNS = {
                         description: "It may take a while for the approval workflow list to be updated. "
                             + "Refresh in a few seconds to get the updated approval workflow list.",
                         message: "Updating approval workflow list takes time"
+                    },
+                    deleteApprovalWorkflow: {
+                        genericError: {
+                            description: "There was an error while deleting the approval workflow.",
+                            message: "Something went wrong!"
+                        },
+                        success: {
+                            description: "The approval workflow has been deleted successfully!",
+                            message: "Approval workflow deleted successfully!"
+                        }
+                    },
+                    fetchApprovalWorkflows: {
+                        genericError: {
+                            description: "An error occurred while fetching approval workflows.",
+                            message: "Something went wrong"
+                        }
                     },
                     testConnection: {
                         genericError: {
@@ -8415,6 +8451,16 @@ export const console: ConsoleNS = {
                     updateDelay: {
                         description: "It might take some time for the updated properties to appear.",
                         message: "Updating properties takes time"
+                    },
+                    updateApprovalWorkflow: {
+                        genericError: {
+                            description: "An error occurred while updating the approval workflow.",
+                            message: "Something went wrong"
+                        },
+                        success: {
+                            description: "This approval workflow has been updated successfully!",
+                            message: "approval workflow updated successfully!"
+                        }
                     }
                 },
                 pageLayout: {
@@ -8468,6 +8514,68 @@ export const console: ConsoleNS = {
                     reset: "Reset Changes",
                     title: "SQL Query Types",
                     update: "Update"
+                }
+            },
+            workflowRequests: {
+                dangerZone: {
+                    delete: {
+                        actionTitle: "Delete Workflow Request",
+                        header: "Delete Workflow Request",
+                        subheader: "Once you delete a workflow request, there is no going back. "
+                            + "Please be certain."
+                    }
+                },
+                notifications: {
+                    deleteWorkflowRequest: {
+                        genericError: {
+                            description: "There was an error while deleting the workflow request.",
+                            message: "Something went wrong!"
+                        },
+                        success: {
+                            description: "The workflow request has been deleted successfully!",
+                            message: "Workflow request deleted successfully!"
+                        }
+                    },
+                    fetchWorkflowRequests: {
+                        genericError: {
+                            description: "An error occurred while fetching workflow requests.",
+                            message: "Something went wrong!"
+                        }
+                    },
+                    fetchWorkflowRequestDetails: {
+                        genericError: {
+                            description: "An error occurred while fetching workflow request details.",
+                            message: "Something went wrong!"
+                        },
+                        success: {
+                            description: "Successfully retrieved workflow request details.",
+                            message: "Retrieval successful!"
+                        }
+                    },
+                    searchWorkflowRequests: {
+                        genericError: {
+                            description: "An error occurred while searching workflow requests.",
+                            message: "Something went wrong!"
+                        }
+                    }
+                },
+                details: {
+                    header: "Workflow Request Details",
+                    fields: {
+                        id: "ID",
+                        eventType: "Event Type",
+                        requestInitiator: "Request Initiator",
+                        status: "Status",
+                        createdAt: "Created At",
+                        updatedAt: "Updated At",
+                        requestParams: "Request Params"
+                    },
+                    loading: "Loading...",
+                    error: {
+                        header: "Error",
+                        content: "Failed to load workflow Request details."
+                    },
+                    backButton: "Back"
                 }
             }
         },

@@ -32,7 +32,7 @@ export class ConnectionUIConstants {
      * Private constructor to avoid object instantiation from outside
      * the class.
      */
-    private constructor() {}
+    private constructor() { }
 
     /**
      * Key for the URL search param for IDP create wizard trigger.
@@ -105,7 +105,16 @@ export class ConnectionUIConstants {
         OTP_LENGTH_MAX_VALUE: number;
         OTP_LENGTH_MIN_LENGTH: number;
         OTP_LENGTH_MIN_VALUE: number;
+        ALLOWED_RESEND_ATTEMPT_COUNT_MIN_LENGTH: number;
+        ALLOWED_RESEND_ATTEMPT_COUNT_MAX_LENGTH: number;
+        ALLOWED_RESEND_ATTEMPT_COUNT_MIN_VALUE: number;
+        ALLOWED_RESEND_ATTEMPT_COUNT_MAX_VALUE: number;
+
     } = {
+            ALLOWED_RESEND_ATTEMPT_COUNT_MAX_LENGTH: 10000,
+            ALLOWED_RESEND_ATTEMPT_COUNT_MAX_VALUE: 100,
+            ALLOWED_RESEND_ATTEMPT_COUNT_MIN_LENGTH: 1,
+            ALLOWED_RESEND_ATTEMPT_COUNT_MIN_VALUE: 0,
             EXPIRY_TIME_MAX_LENGTH: 10000,
             EXPIRY_TIME_MAX_VALUE: 1440,
             EXPIRY_TIME_MIN_LENGTH: 1,
@@ -252,36 +261,36 @@ export class ConnectionUIConstants {
     } = {
             AUTHENTICATORS_FETCH_ERROR: "An error occurred while fetching the authenticators.",
             AUTHENTICATORS_FETCH_INVALID_STATUS_CODE_ERROR:
-            "Received an invalid status code while fetching the authenticators.",
+                "Received an invalid status code while fetching the authenticators.",
             COMBINED_AUTHENTICATOR_FETCH_ERROR: "An error occurred while fetching the local and federated authenticators.",
             CONNECTIONS_FETCH_ERROR: "An error occurred while fetching connections.",
             CONNECTIONS_FETCH_INVALID_STATUS_CODE_ERROR: "Received an invalid status code while fetching connections.",
             CONNECTION_CERTIFICATE_UPDATE_ERROR: "An error occurred while updating the certificate of the connection.",
             CONNECTION_CLAIMS_UPDATE_ERROR:
-            "An error occurred while updating claims configurations of the identity provider.",
+                "An error occurred while updating claims configurations of the identity provider.",
             CONNECTION_IMPLICIT_ASSOCIATION_UPDATE_ERROR:
-            "An error occurred while updating implicit association configurations of the identity provider.",
+                "An error occurred while updating implicit association configurations of the identity provider.",
             CONNECTION_JIT_PROVISIONING_UPDATE_ERROR:
-            "An error occurred while updating the JIT provisioning configurations of the connection.",
+                "An error occurred while updating the JIT provisioning configurations of the connection.",
             FIDO_AUTHENTICATOR_CONFIG_UPDATE_ERROR: "An error occurred while updating the Passkey connector configs.",
             FIDO_AUTHENTICATOR_CONFIG_UPDATE_INVALID_STATUS_CODE_ERROR:
-            "Received an invalid status code while updating the Passkey connector configs.",
+                "Received an invalid status code while updating the Passkey connector configs.",
             IDENTITY_PROVIDER_TEMPLATES_LIST_FETCH_ERROR:
-            "An error occurred while fetching the required connection templates list.",
+                "An error occurred while fetching the required connection templates list.",
             IDENTITY_PROVIDER_TEMPLATES_LIST_FETCH_INVALID_STATUS_CODE_ERROR:
-            "Received an invalid status code while fetching connection templates list.",
+                "Received an invalid status code while fetching connection templates list.",
             LOCAL_AUTHENTICATORS_FETCH_ERROR: "An error occurred while fetching the local authenticators.",
             LOCAL_AUTHENTICATORS_FETCH_INVALID_STATUS_CODE_ERROR:
-            "Received an invalid status code while fetching local authenticators.",
+                "Received an invalid status code while fetching local authenticators.",
             LOCAL_AUTHENTICATOR_FETCH_ERROR: "An error occurred while fetching the local authenticator.",
             LOCAL_AUTHENTICATOR_FETCH_INVALID_STATUS_CODE_ERROR:
-            "Received an invalid status code while fetching the local authenticator.",
+                "Received an invalid status code while fetching the local authenticator.",
             MULTI_FACTOR_AUTHENTICATOR_FETCH_ERROR: "An error occurred while fetching the multi-factor authenticator.",
             MULTI_FACTOR_AUTHENTICATOR_FETCH_INVALID_STATUS_CODE_ERROR:
-            "Received an invalid status code while fetching the multi-factor authenticator.",
+                "Received an invalid status code while fetching the multi-factor authenticator.",
             MULTI_FACTOR_AUTHENTICATOR_UPDATE_ERROR: "An error occurred while fetching the multi-factor authenticator.",
             MULTI_FACTOR_AUTHENTICATOR_UPDATE_INVALID_STATUS_CODE_ERROR:
-            "Received an invalid status code while updating the multi-factor authenticator."
+                "Received an invalid status code while updating the multi-factor authenticator."
         };
     /* eslint-enable max-len */
 
@@ -329,19 +338,19 @@ export class ConnectionUIConstants {
      * Set of Connection setup guide links.
      */
     public static readonly DOC_LINK_DICTIONARY: Map<string, string> = new Map<string, string>([
-        [ "apple-idp", "develop.connections.newConnection.apple.learnMore" ],
-        [ "duo-idp", "develop.connections.newConnection.duo.learnMore" ],
-        [ "enterprise-protocols", "develop.connections.newConnection.learnMore" ],
-        [ "facebook-idp", "develop.connections.newConnection.facebook.learnMore" ],
-        [ "github-idp", "develop.connections.newConnection.github.learnMore" ],
-        [ "google-idp", "develop.connections.newConnection.google.learnMore" ],
-        [ "hypr-idp", "develop.connections.newConnection.hypr.learnMore" ],
-        [ "iproov-idp", "develop.connections.newConnection.iProov.learnMore" ],
-        [ "microsoft-idp", "develop.connections.newConnection.microsoft.learnMore" ],
-        [ "enterprise-oidc-idp", "develop.connections.newConnection.enterprise.oidcLearnMore.learnMore" ],
-        [ "enterprise-saml-idp", "develop.connections.newConnection.enterprise.samlLearnMore.learnMore" ],
-        [ "swe-idp", "develop.connections.newConnection.siwe.learnMore" ],
-        [ "trusted-token-issuer", "develop.connections.newConnection.trustedTokenIssuer.learnMore" ]
+        ["apple-idp", "develop.connections.newConnection.apple.learnMore"],
+        ["duo-idp", "develop.connections.newConnection.duo.learnMore"],
+        ["enterprise-protocols", "develop.connections.newConnection.learnMore"],
+        ["facebook-idp", "develop.connections.newConnection.facebook.learnMore"],
+        ["github-idp", "develop.connections.newConnection.github.learnMore"],
+        ["google-idp", "develop.connections.newConnection.google.learnMore"],
+        ["hypr-idp", "develop.connections.newConnection.hypr.learnMore"],
+        ["iproov-idp", "develop.connections.newConnection.iProov.learnMore"],
+        ["microsoft-idp", "develop.connections.newConnection.microsoft.learnMore"],
+        ["enterprise-oidc-idp", "develop.connections.newConnection.enterprise.oidcLearnMore.learnMore"],
+        ["enterprise-saml-idp", "develop.connections.newConnection.enterprise.samlLearnMore.learnMore"],
+        ["swe-idp", "develop.connections.newConnection.siwe.learnMore"],
+        ["trusted-token-issuer", "develop.connections.newConnection.trustedTokenIssuer.learnMore"]
     ]);
 
     /**
